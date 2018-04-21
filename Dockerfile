@@ -2,7 +2,7 @@ FROM ubuntu:12.04
 
 # Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y git curl apache2 php5 libapache2-mod-php5 php5-mcrypt php5-mysql
+RUN apt-get install -y git curl apache2 php libapache2-mod-php php-mcrypt php-mysql
 
 # Install app
 RUN rm -rf /var/www/*
