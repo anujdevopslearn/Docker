@@ -1,4 +1,4 @@
-FROM ubuntu:12.04
+FROM ubuntu
 
 # Install dependencies
 RUN apt-get update -y
