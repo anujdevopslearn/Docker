@@ -1,5 +1,6 @@
 FROM ubuntu
 
+ENV DEBIAN_FRONTEND=non-interactive
 # Install dependencies
 RUN apt-get update -y
 RUN apt-get install -y git curl apache2 php libapache2-mod-php php-mysql
