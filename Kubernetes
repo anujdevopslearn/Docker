@@ -21,9 +21,7 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
 kubectl get node
 kubectl get pods --all-namespaces
 kubectl taint nodes --all node-role.kubernetes.io/master-
-kubectl get pods --all-namespaces
-kubectl get node
-history
+
 kubectl create namespace application
 kubectl get pods --all-namespaces
 
