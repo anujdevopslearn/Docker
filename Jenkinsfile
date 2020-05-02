@@ -24,6 +24,5 @@ node {
     mail body: "Project Execution Completed with status : " + currentBuild.result ,
                      subject: 'Project Execution Notification',
                      to: 'abc@abc.com'
-       }
-   }
-}
+     }
+ }
