@@ -10,13 +10,15 @@ node {
 
   stage ('Run Application') {
     try {
+      // Stop existing Container
+      sh 'docker rm docker_container -f'
       // Start database container here
       sh "docker run -d --name docker_container docker_image:${env.BUILD_NUMBER}"
     } 
 	catch (error) {
     } finally {
       // Stop and remove database container here
-      sh 'docker rm docker_container -f'
+      
     }
   }
   
