@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND=non-interactive
 # Install dependencies
