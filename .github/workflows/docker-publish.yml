@@ -11,7 +11,7 @@ on:
 
 env:
   # github.repository as <account>/<repo>
-  IMAGE_NAME: "anujsharma1990/counterwebapp"
+  IMAGE_NAME: "counterwebapp.azurecr.io/counterwebapp"
 
 
 jobs:
