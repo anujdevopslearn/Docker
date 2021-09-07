@@ -47,3 +47,4 @@ jobs:
              az account show
              az aks get-credentials --resource-group githubactions --name myAKSCluster
              kubectl get node
+             kubectl create deployment kubernetes-bootcamp --image=docker.io/jocatalin/kubernetes-bootcamp:v1 --port=8080
