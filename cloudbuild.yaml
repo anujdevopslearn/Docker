@@ -1,0 +1,22 @@
+steps:
+  # 1. Build the Image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-docker.pkg.dev/$PROJECT_ID/app-builds-repo/my-app:$COMMIT_SHA', '.']
+
+  # 2. Push the Image (CRITICAL FIX)
+  # You must upload the image to the registry before Cloud Run can deploy it.
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-docker.pkg.dev/$PROJECT_ID/app-builds-repo/my-app:$COMMIT_SHA']
+
+
+# Listing images here ensures the image digest is displayed in the Cloud Build UI
+images:
+  - 'us-docker.pkg.dev/$PROJECT_ID/app-builds-repo/my-app:$COMMIT_SHA'
+
+# Store logs in the dual-region bucket
+logsBucket: '${_LOGS_BUCKET}'
+
+options:
+  # Use the pool ID passed from Terraform
+  pool:
+    name: '${_WORKER_POOL}'
